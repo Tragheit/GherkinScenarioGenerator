@@ -21,6 +21,12 @@ namespace GherkinScenarioGenerator
             InitializeComponent();
         }
 
+        private void mainForm_Load(object sender, EventArgs e)
+        {
+            scenarioTypeCB.SelectedIndex = 0;
+            stepTypeCB.SelectedIndex = 0;
+        }
+
         private void featureDescriptionTB_Leave(object sender, EventArgs e)
         {
             if (featureDescriptionTB.Text == "")
@@ -92,8 +98,8 @@ namespace GherkinScenarioGenerator
                 scenarioSteps += "\n";
             }
 
-            scenarioPreviewTB.Text = "#Gherkin Generator Output" + Environment.NewLine + Environment.NewLine +
-                featureText + Environment.NewLine + Environment.NewLine +
+            scenarioPreviewTB.Text = "#Gherkin Generator Output \r" + Environment.NewLine + Environment.NewLine +
+                featureText + Environment.NewLine +
                 scenarioType +
                 scenarioTitle + Environment.NewLine +
                 scenarioSteps;
@@ -135,6 +141,8 @@ namespace GherkinScenarioGenerator
             source.DataSource = gherkinSteps;
             stepsDGV.DataSource = source;
             display_scenario_preview(sender, e);
+
+            stepDescriptionTB.Text = "";
         }
 
         private void click_delete_btn(object sender, EventArgs e)
@@ -168,6 +176,7 @@ namespace GherkinScenarioGenerator
                 newRow.Cells[1].Value = stepDescriptionTB.Text;
             }
             display_scenario_preview(sender, e);
+            stepDescriptionTB.Text = "";
         }
     }
 }

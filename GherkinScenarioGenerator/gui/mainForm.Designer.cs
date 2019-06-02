@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.scenarioPreviewPanel = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -50,14 +49,12 @@
             this.stepTypeCB = new System.Windows.Forms.ComboBox();
             this.stepDescriptionTB = new System.Windows.Forms.RichTextBox();
             this.stepsDGV = new System.Windows.Forms.DataGridView();
-            this.mainFormBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.scenarioPreviewPanel.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.scenarioSetupPanel.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stepsDGV)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mainFormBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -363,10 +360,6 @@
             this.stepsDGV.TabIndex = 19;
             this.stepsDGV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.cell_clicked);
             // 
-            // mainFormBindingSource
-            // 
-            this.mainFormBindingSource.DataSource = typeof(GherkinScenarioGenerator.mainForm);
-            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -375,6 +368,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "mainForm";
             this.Text = "GHERKIN Generator";
+            this.Load += new System.EventHandler(this.mainForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.scenarioPreviewPanel.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -383,7 +377,6 @@
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stepsDGV)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mainFormBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -410,7 +403,6 @@
         private System.Windows.Forms.ComboBox stepTypeCB;
         private System.Windows.Forms.RichTextBox stepDescriptionTB;
         private System.Windows.Forms.RichTextBox scenarioPreviewTB;
-        private System.Windows.Forms.BindingSource mainFormBindingSource;
         private System.Windows.Forms.DataGridView stepsDGV;
     }
 }
