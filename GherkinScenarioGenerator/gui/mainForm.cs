@@ -128,13 +128,20 @@ namespace GherkinScenarioGenerator
         {
             var obj = new GherkinStep(stepTypeCB.Text, stepDescriptionTB.Text);
             gherkinSteps.Add(obj);
-        }
 
-        private void reload_data(object sender, EventArgs e)
-        {
             var source = new BindingSource();
             source.DataSource = gherkinSteps;
             stepsDGV.DataSource = source;
+            display_scenario_preview(sender, e);
+        }
+
+        private void click_delete_btn(object sender, EventArgs e)
+        {
+            if (stepsDGV.SelectedCells.Count > 0)
+            {
+                int rowIndex = stepsDGV.CurrentCell.ColumnIndex;
+                stepsDGV.Rows.RemoveAt(rowIndex);
+            }
             display_scenario_preview(sender, e);
         }
     }
