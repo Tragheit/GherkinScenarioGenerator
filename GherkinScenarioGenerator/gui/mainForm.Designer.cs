@@ -293,6 +293,7 @@
             this.updateBtn.TabIndex = 14;
             this.updateBtn.Text = "Update Step";
             this.updateBtn.UseVisualStyleBackColor = true;
+            this.updateBtn.Click += new System.EventHandler(this.click_update_btn);
             // 
             // addBtn
             // 
@@ -360,6 +361,7 @@
             this.stepsDGV.RowTemplate.Height = 24;
             this.stepsDGV.Size = new System.Drawing.Size(829, 128);
             this.stepsDGV.TabIndex = 19;
+            this.stepsDGV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.cell_clicked);
             // 
             // mainFormBindingSource
             // 

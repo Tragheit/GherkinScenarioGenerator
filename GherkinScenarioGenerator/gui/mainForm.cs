@@ -14,6 +14,8 @@ namespace GherkinScenarioGenerator
     public partial class mainForm : Form
     {
         List<GherkinStep> gherkinSteps = new List<GherkinStep>();
+        int rowIndex;
+
         public mainForm()
         {
             InitializeComponent();
@@ -141,6 +143,29 @@ namespace GherkinScenarioGenerator
             {
                 int rowIndex = stepsDGV.CurrentCell.ColumnIndex;
                 stepsDGV.Rows.RemoveAt(rowIndex);
+            }
+            display_scenario_preview(sender, e);
+        }
+
+        private void cell_clicked(object sender, DataGridViewCellEventArgs e)
+        {
+            if (stepsDGV.SelectedRows.Count == 1)
+            {
+                rowIndex = e.RowIndex;
+                DataGridViewRow row = stepsDGV.Rows[rowIndex];
+
+                stepTypeCB.Text = row.Cells[0].Value.ToString();
+                stepDescriptionTB.Text = row.Cells[1].Value.ToString();
+            }
+        }
+
+        private void click_update_btn(object sender, EventArgs e)
+        {
+            if (stepsDGV.SelectedRows.Count == 1)
+            {
+                DataGridViewRow newRow = stepsDGV.Rows[rowIndex];
+                newRow.Cells[0].Value = stepTypeCB.Text;
+                newRow.Cells[1].Value = stepDescriptionTB.Text;
             }
             display_scenario_preview(sender, e);
         }
