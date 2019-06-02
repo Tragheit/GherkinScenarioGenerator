@@ -30,29 +30,29 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.scenarioPreviewPanel = new System.Windows.Forms.Panel();
-            this.scenarioSetupPanel = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.scenarioPreviewLabel = new System.Windows.Forms.Label();
+            this.scenarioPreviewTB = new System.Windows.Forms.TextBox();
+            this.scenarioSetupPanel = new System.Windows.Forms.Panel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.featureLab = new System.Windows.Forms.Label();
             this.typeLab = new System.Windows.Forms.Label();
             this.previewLab = new System.Windows.Forms.Label();
             this.addStepLab = new System.Windows.Forms.Label();
-            this.FeatureDescriptionLab = new System.Windows.Forms.TextBox();
+            this.featureDescriptionTB = new System.Windows.Forms.TextBox();
             this.titleTB = new System.Windows.Forms.TextBox();
             this.stepsDGV = new System.Windows.Forms.DataGridView();
-            this.ScenarioTypeCB = new System.Windows.Forms.ComboBox();
-            this.addBtn = new System.Windows.Forms.Button();
-            this.updateBtn = new System.Windows.Forms.Button();
+            this.scenarioTypeCB = new System.Windows.Forms.ComboBox();
             this.deleteBtn = new System.Windows.Forms.Button();
+            this.updateBtn = new System.Windows.Forms.Button();
+            this.addBtn = new System.Windows.Forms.Button();
             this.saveBtn = new System.Windows.Forms.Button();
             this.stepTypeCB = new System.Windows.Forms.ComboBox();
-            this.stepDescriptionLab = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.stepDescriptionTB = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.scenarioPreviewPanel.SuspendLayout();
-            this.scenarioSetupPanel.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.scenarioSetupPanel.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stepsDGV)).BeginInit();
             this.SuspendLayout();
@@ -81,15 +81,6 @@
             this.scenarioPreviewPanel.Size = new System.Drawing.Size(374, 528);
             this.scenarioPreviewPanel.TabIndex = 0;
             // 
-            // scenarioSetupPanel
-            // 
-            this.scenarioSetupPanel.Controls.Add(this.tableLayoutPanel3);
-            this.scenarioSetupPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.scenarioSetupPanel.Location = new System.Drawing.Point(3, 3);
-            this.scenarioSetupPanel.Name = "scenarioSetupPanel";
-            this.scenarioSetupPanel.Size = new System.Drawing.Size(562, 528);
-            this.scenarioSetupPanel.TabIndex = 1;
-            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 3;
@@ -97,7 +88,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 90F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.tableLayoutPanel2.Controls.Add(this.scenarioPreviewLabel, 1, 1);
-            this.tableLayoutPanel2.Controls.Add(this.textBox1, 1, 3);
+            this.tableLayoutPanel2.Controls.Add(this.scenarioPreviewTB, 1, 3);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -124,6 +115,24 @@
             this.scenarioPreviewLabel.Text = "Preview of Scenario";
             this.scenarioPreviewLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // scenarioPreviewTB
+            // 
+            this.scenarioPreviewTB.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.scenarioPreviewTB.Location = new System.Drawing.Point(21, 134);
+            this.scenarioPreviewTB.Multiline = true;
+            this.scenarioPreviewTB.Name = "scenarioPreviewTB";
+            this.scenarioPreviewTB.Size = new System.Drawing.Size(330, 363);
+            this.scenarioPreviewTB.TabIndex = 1;
+            // 
+            // scenarioSetupPanel
+            // 
+            this.scenarioSetupPanel.Controls.Add(this.tableLayoutPanel3);
+            this.scenarioSetupPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.scenarioSetupPanel.Location = new System.Drawing.Point(3, 3);
+            this.scenarioSetupPanel.Name = "scenarioSetupPanel";
+            this.scenarioSetupPanel.Size = new System.Drawing.Size(562, 528);
+            this.scenarioSetupPanel.TabIndex = 1;
+            // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.ColumnCount = 7;
@@ -138,16 +147,16 @@
             this.tableLayoutPanel3.Controls.Add(this.typeLab, 1, 3);
             this.tableLayoutPanel3.Controls.Add(this.previewLab, 1, 5);
             this.tableLayoutPanel3.Controls.Add(this.addStepLab, 1, 9);
-            this.tableLayoutPanel3.Controls.Add(this.FeatureDescriptionLab, 3, 1);
+            this.tableLayoutPanel3.Controls.Add(this.featureDescriptionTB, 3, 1);
             this.tableLayoutPanel3.Controls.Add(this.titleTB, 5, 3);
             this.tableLayoutPanel3.Controls.Add(this.stepsDGV, 1, 7);
-            this.tableLayoutPanel3.Controls.Add(this.ScenarioTypeCB, 3, 3);
+            this.tableLayoutPanel3.Controls.Add(this.scenarioTypeCB, 3, 3);
             this.tableLayoutPanel3.Controls.Add(this.deleteBtn, 5, 13);
             this.tableLayoutPanel3.Controls.Add(this.updateBtn, 3, 13);
             this.tableLayoutPanel3.Controls.Add(this.addBtn, 1, 13);
             this.tableLayoutPanel3.Controls.Add(this.saveBtn, 1, 15);
             this.tableLayoutPanel3.Controls.Add(this.stepTypeCB, 1, 11);
-            this.tableLayoutPanel3.Controls.Add(this.stepDescriptionLab, 3, 11);
+            this.tableLayoutPanel3.Controls.Add(this.stepDescriptionTB, 3, 11);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -216,26 +225,33 @@
             this.addStepLab.TabIndex = 3;
             this.addStepLab.Text = "Add Step";
             // 
-            // FeatureDescriptionLab
+            // featureDescriptionTB
             // 
-            this.tableLayoutPanel3.SetColumnSpan(this.FeatureDescriptionLab, 3);
-            this.FeatureDescriptionLab.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.FeatureDescriptionLab.Location = new System.Drawing.Point(206, 29);
-            this.FeatureDescriptionLab.Name = "FeatureDescriptionLab";
-            this.FeatureDescriptionLab.Size = new System.Drawing.Size(322, 22);
-            this.FeatureDescriptionLab.TabIndex = 9;
-            this.FeatureDescriptionLab.Text = "feature description\r\n";
-            this.FeatureDescriptionLab.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tableLayoutPanel3.SetColumnSpan(this.featureDescriptionTB, 3);
+            this.featureDescriptionTB.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.featureDescriptionTB.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.featureDescriptionTB.Location = new System.Drawing.Point(206, 29);
+            this.featureDescriptionTB.Name = "featureDescriptionTB";
+            this.featureDescriptionTB.Size = new System.Drawing.Size(322, 22);
+            this.featureDescriptionTB.TabIndex = 9;
+            this.featureDescriptionTB.TabStop = false;
+            this.featureDescriptionTB.Text = "Feature Description";
+            this.featureDescriptionTB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.featureDescriptionTB.Enter += new System.EventHandler(this.featureDescriptionTB_Enter);
+            this.featureDescriptionTB.Leave += new System.EventHandler(this.featureDescriptionTB_Leave);
             // 
             // titleTB
             // 
             this.titleTB.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.titleTB.ForeColor = System.Drawing.SystemColors.InactiveCaption;
             this.titleTB.Location = new System.Drawing.Point(387, 91);
             this.titleTB.Name = "titleTB";
             this.titleTB.Size = new System.Drawing.Size(141, 22);
             this.titleTB.TabIndex = 10;
-            this.titleTB.Text = "title";
+            this.titleTB.Text = "Scenario Title";
             this.titleTB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.titleTB.Enter += new System.EventHandler(this.titleTB_Enter);
+            this.titleTB.Leave += new System.EventHandler(this.titleTB_Leave);
             // 
             // stepsDGV
             // 
@@ -248,25 +264,28 @@
             this.stepsDGV.Size = new System.Drawing.Size(497, 110);
             this.stepsDGV.TabIndex = 11;
             // 
-            // ScenarioTypeCB
+            // scenarioTypeCB
             // 
-            this.ScenarioTypeCB.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ScenarioTypeCB.FormattingEnabled = true;
-            this.ScenarioTypeCB.Location = new System.Drawing.Point(206, 91);
-            this.ScenarioTypeCB.Name = "ScenarioTypeCB";
-            this.ScenarioTypeCB.Size = new System.Drawing.Size(147, 24);
-            this.ScenarioTypeCB.TabIndex = 12;
+            this.scenarioTypeCB.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.scenarioTypeCB.FormattingEnabled = true;
+            this.scenarioTypeCB.Items.AddRange(new object[] {
+            "Scenario",
+            "Scenario Outline"});
+            this.scenarioTypeCB.Location = new System.Drawing.Point(206, 91);
+            this.scenarioTypeCB.Name = "scenarioTypeCB";
+            this.scenarioTypeCB.Size = new System.Drawing.Size(147, 24);
+            this.scenarioTypeCB.TabIndex = 12;
             // 
-            // addBtn
+            // deleteBtn
             // 
-            this.addBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.addBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.addBtn.Location = new System.Drawing.Point(31, 403);
-            this.addBtn.Name = "addBtn";
-            this.addBtn.Size = new System.Drawing.Size(141, 36);
-            this.addBtn.TabIndex = 13;
-            this.addBtn.Text = "Add Step";
-            this.addBtn.UseVisualStyleBackColor = true;
+            this.deleteBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.deleteBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.deleteBtn.Location = new System.Drawing.Point(387, 403);
+            this.deleteBtn.Name = "deleteBtn";
+            this.deleteBtn.Size = new System.Drawing.Size(141, 36);
+            this.deleteBtn.TabIndex = 15;
+            this.deleteBtn.Text = "Delete Step";
+            this.deleteBtn.UseVisualStyleBackColor = true;
             // 
             // updateBtn
             // 
@@ -279,16 +298,16 @@
             this.updateBtn.Text = "Update Step";
             this.updateBtn.UseVisualStyleBackColor = true;
             // 
-            // deleteBtn
+            // addBtn
             // 
-            this.deleteBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.deleteBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.deleteBtn.Location = new System.Drawing.Point(387, 403);
-            this.deleteBtn.Name = "deleteBtn";
-            this.deleteBtn.Size = new System.Drawing.Size(141, 36);
-            this.deleteBtn.TabIndex = 15;
-            this.deleteBtn.Text = "Delete Step";
-            this.deleteBtn.UseVisualStyleBackColor = true;
+            this.addBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.addBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.addBtn.Location = new System.Drawing.Point(31, 403);
+            this.addBtn.Name = "addBtn";
+            this.addBtn.Size = new System.Drawing.Size(141, 36);
+            this.addBtn.TabIndex = 13;
+            this.addBtn.Text = "Add Step";
+            this.addBtn.UseVisualStyleBackColor = true;
             // 
             // saveBtn
             // 
@@ -306,30 +325,28 @@
             // 
             this.stepTypeCB.Dock = System.Windows.Forms.DockStyle.Fill;
             this.stepTypeCB.FormattingEnabled = true;
+            this.stepTypeCB.Items.AddRange(new object[] {
+            "Given",
+            "When",
+            "Then"});
             this.stepTypeCB.Location = new System.Drawing.Point(31, 351);
             this.stepTypeCB.Name = "stepTypeCB";
             this.stepTypeCB.Size = new System.Drawing.Size(141, 24);
             this.stepTypeCB.TabIndex = 17;
             // 
-            // stepDescriptionLab
+            // stepDescriptionTB
             // 
-            this.tableLayoutPanel3.SetColumnSpan(this.stepDescriptionLab, 3);
-            this.stepDescriptionLab.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.stepDescriptionLab.Location = new System.Drawing.Point(206, 351);
-            this.stepDescriptionLab.Name = "stepDescriptionLab";
-            this.stepDescriptionLab.Size = new System.Drawing.Size(322, 22);
-            this.stepDescriptionLab.TabIndex = 18;
-            this.stepDescriptionLab.Text = "step description";
-            this.stepDescriptionLab.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.Location = new System.Drawing.Point(21, 134);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(330, 363);
-            this.textBox1.TabIndex = 1;
+            this.tableLayoutPanel3.SetColumnSpan(this.stepDescriptionTB, 3);
+            this.stepDescriptionTB.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.stepDescriptionTB.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.stepDescriptionTB.Location = new System.Drawing.Point(206, 351);
+            this.stepDescriptionTB.Name = "stepDescriptionTB";
+            this.stepDescriptionTB.Size = new System.Drawing.Size(322, 22);
+            this.stepDescriptionTB.TabIndex = 18;
+            this.stepDescriptionTB.Text = "Step Description";
+            this.stepDescriptionTB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.stepDescriptionTB.Enter += new System.EventHandler(this.stepDescriptionTB_Enter);
+            this.stepDescriptionTB.Leave += new System.EventHandler(this.stepDescriptionTB_Leave);
             // 
             // mainForm
             // 
@@ -341,9 +358,9 @@
             this.Text = "GHERKIN Generator";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.scenarioPreviewPanel.ResumeLayout(false);
-            this.scenarioSetupPanel.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            this.scenarioSetupPanel.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stepsDGV)).EndInit();
@@ -363,17 +380,17 @@
         private System.Windows.Forms.Label typeLab;
         private System.Windows.Forms.Label previewLab;
         private System.Windows.Forms.Label addStepLab;
-        private System.Windows.Forms.TextBox FeatureDescriptionLab;
+        private System.Windows.Forms.TextBox featureDescriptionTB;
         private System.Windows.Forms.TextBox titleTB;
         private System.Windows.Forms.DataGridView stepsDGV;
-        private System.Windows.Forms.ComboBox ScenarioTypeCB;
+        private System.Windows.Forms.ComboBox scenarioTypeCB;
         private System.Windows.Forms.Button deleteBtn;
         private System.Windows.Forms.Button updateBtn;
         private System.Windows.Forms.Button addBtn;
         private System.Windows.Forms.Button saveBtn;
         private System.Windows.Forms.ComboBox stepTypeCB;
-        private System.Windows.Forms.TextBox stepDescriptionLab;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox stepDescriptionTB;
+        private System.Windows.Forms.TextBox scenarioPreviewTB;
     }
 }
 
