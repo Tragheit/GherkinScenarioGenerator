@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.scenarioPreviewPanel = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -50,15 +49,12 @@
             this.stepTypeCB = new System.Windows.Forms.ComboBox();
             this.stepDescriptionTB = new System.Windows.Forms.RichTextBox();
             this.stepsDGV = new System.Windows.Forms.DataGridView();
-            this.reloadDGVBtn = new System.Windows.Forms.Button();
-            this.mainFormBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.scenarioPreviewPanel.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.scenarioSetupPanel.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stepsDGV)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mainFormBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -163,7 +159,6 @@
             this.tableLayoutPanel3.Controls.Add(this.stepTypeCB, 1, 11);
             this.tableLayoutPanel3.Controls.Add(this.stepDescriptionTB, 3, 11);
             this.tableLayoutPanel3.Controls.Add(this.stepsDGV, 1, 7);
-            this.tableLayoutPanel3.Controls.Add(this.reloadDGVBtn, 5, 9);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -283,6 +278,7 @@
             this.deleteBtn.TabIndex = 15;
             this.deleteBtn.Text = "Delete Step";
             this.deleteBtn.UseVisualStyleBackColor = true;
+            this.deleteBtn.Click += new System.EventHandler(this.click_delete_btn);
             // 
             // updateBtn
             // 
@@ -294,6 +290,7 @@
             this.updateBtn.TabIndex = 14;
             this.updateBtn.Text = "Update Step";
             this.updateBtn.UseVisualStyleBackColor = true;
+            this.updateBtn.Click += new System.EventHandler(this.click_update_btn);
             // 
             // addBtn
             // 
@@ -362,22 +359,7 @@
             this.stepsDGV.RowTemplate.Height = 24;
             this.stepsDGV.Size = new System.Drawing.Size(829, 128);
             this.stepsDGV.TabIndex = 19;
-            // 
-            // reloadDGVBtn
-            // 
-            this.reloadDGVBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.reloadDGVBtn.Location = new System.Drawing.Point(641, 367);
-            this.reloadDGVBtn.Name = "reloadDGVBtn";
-            this.reloadDGVBtn.Size = new System.Drawing.Size(238, 24);
-            this.reloadDGVBtn.TabIndex = 20;
-            this.reloadDGVBtn.Tag = "`";
-            this.reloadDGVBtn.Text = "Reload Grid";
-            this.reloadDGVBtn.UseVisualStyleBackColor = true;
-            this.reloadDGVBtn.Click += new System.EventHandler(this.reload_data);
-            // 
-            // mainFormBindingSource
-            // 
-            this.mainFormBindingSource.DataSource = typeof(GherkinScenarioGenerator.mainForm);
+            this.stepsDGV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.cell_clicked);
             // 
             // mainForm
             // 
@@ -387,6 +369,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "mainForm";
             this.Text = "GHERKIN Generator";
+            this.Load += new System.EventHandler(this.mainForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.scenarioPreviewPanel.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -395,7 +378,6 @@
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stepsDGV)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mainFormBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -422,9 +404,7 @@
         private System.Windows.Forms.ComboBox stepTypeCB;
         private System.Windows.Forms.RichTextBox stepDescriptionTB;
         private System.Windows.Forms.RichTextBox scenarioPreviewTB;
-        private System.Windows.Forms.BindingSource mainFormBindingSource;
         private System.Windows.Forms.DataGridView stepsDGV;
-        private System.Windows.Forms.Button reloadDGVBtn;
     }
 }
 

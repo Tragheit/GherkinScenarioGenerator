@@ -15,9 +15,17 @@ namespace GherkinScenarioGenerator
     public partial class mainForm : Form
     {
         List<GherkinStep> gherkinSteps = new List<GherkinStep>();
+        int rowIndex;
+
         public mainForm()
         {
             InitializeComponent();
+        }
+
+        private void mainForm_Load(object sender, EventArgs e)
+        {
+            scenarioTypeCB.SelectedIndex = 0;
+            stepTypeCB.SelectedIndex = 0;
         }
 
         private void featureDescriptionTB_Leave(object sender, EventArgs e)
@@ -92,7 +100,7 @@ namespace GherkinScenarioGenerator
             }
 
             scenarioPreviewTB.Text = "#Gherkin Generator Output" + Environment.NewLine + Environment.NewLine +
-                featureText + Environment.NewLine + Environment.NewLine +
+                featureText + Environment.NewLine +
                 scenarioType +
                 scenarioTitle + Environment.NewLine +
                 scenarioSteps;
@@ -129,14 +137,47 @@ namespace GherkinScenarioGenerator
         {
             var obj = new GherkinStep(stepTypeCB.Text, stepDescriptionTB.Text);
             gherkinSteps.Add(obj);
-        }
 
-        private void reload_data(object sender, EventArgs e)
-        {
             var source = new BindingSource();
             source.DataSource = gherkinSteps;
             stepsDGV.DataSource = source;
             display_scenario_preview(sender, e);
+
+            stepDescriptionTB.Text = "";
+        }
+
+        private void click_delete_btn(object sender, EventArgs e)
+        {
+            if (stepsDGV.SelectedCells.Count > 0)
+            {
+                int rowIndex = stepsDGV.CurrentCell.ColumnIndex;
+                stepsDGV.Rows.RemoveAt(rowIndex);
+            }
+            display_scenario_preview(sender, e);
+        }
+
+        private void cell_clicked(object sender, DataGridViewCellEventArgs e)
+        {
+            if (stepsDGV.SelectedRows.Count == 1)
+            {
+                rowIndex = e.RowIndex;
+                DataGridViewRow row = stepsDGV.Rows[rowIndex];
+
+                stepTypeCB.Text = row.Cells[0].Value.ToString();
+                stepDescriptionTB.Text = row.Cells[1].Value.ToString();
+            }
+        }
+
+        private void click_update_btn(object sender, EventArgs e)
+        {
+            if (stepsDGV.SelectedRows.Count == 1)
+            {
+                DataGridViewRow newRow = stepsDGV.Rows[rowIndex];
+                newRow.Cells[0].Value = stepTypeCB.Text;
+                newRow.Cells[1].Value = stepDescriptionTB.Text;
+            }
+            display_scenario_preview(sender, e);
+            stepDescriptionTB.Text = "";
         }
 
         private void click_save_button(object sender, EventArgs e)
