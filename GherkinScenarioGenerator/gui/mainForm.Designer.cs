@@ -318,6 +318,7 @@
             this.saveBtn.TabIndex = 16;
             this.saveBtn.Text = "Save Scenario";
             this.saveBtn.UseVisualStyleBackColor = true;
+            this.saveBtn.Click += new System.EventHandler(this.click_save_button);
             // 
             // stepTypeCB
             // 

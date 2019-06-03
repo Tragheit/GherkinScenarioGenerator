@@ -51,6 +51,7 @@
     <Compile Include="gui\mainForm.Designer.cs">
       <DependentUpon>mainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="logic\FileGenerator.cs" />
     <Compile Include="logic\GherkinStep.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

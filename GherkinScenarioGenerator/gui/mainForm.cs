@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -136,6 +137,32 @@ namespace GherkinScenarioGenerator
             source.DataSource = gherkinSteps;
             stepsDGV.DataSource = source;
             display_scenario_preview(sender, e);
+        }
+
+        private void click_save_button(object sender, EventArgs e)
+        {
+            Stream myStream;
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+
+            saveFileDialog1.Filter = "feature files (*.feature)|*.feature|txt files (*.txt)|*.txt|All files (*.*)|*.*";
+            saveFileDialog1.FilterIndex = 2;
+            saveFileDialog1.RestoreDirectory = true;
+
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                if ((myStream = saveFileDialog1.OpenFile()) != null)
+                {
+                    Stream fileStream = saveFileDialog1.OpenFile();
+                    StreamWriter sw = new StreamWriter(fileStream);
+
+                    sw.Write(scenarioPreviewTB.Text);
+                    sw.Close();
+                    fileStream.Close();
+                    myStream.Close();
+
+                    scenarioPreviewTB.Clear();
+                }
+            }
         }
     }
 }
