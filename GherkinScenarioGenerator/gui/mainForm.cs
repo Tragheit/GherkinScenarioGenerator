@@ -98,7 +98,7 @@ namespace GherkinScenarioGenerator
                 scenarioSteps += "\n";
             }
 
-            scenarioPreviewTB.Text = "#Gherkin Generator Output \r" + Environment.NewLine + Environment.NewLine +
+            scenarioPreviewTB.Text = "#Gherkin Generator Output" + Environment.NewLine + Environment.NewLine +
                 featureText + Environment.NewLine +
                 scenarioType +
                 scenarioTitle + Environment.NewLine +
