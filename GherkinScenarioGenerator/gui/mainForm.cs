@@ -191,18 +191,14 @@ namespace GherkinScenarioGenerator
 
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                if ((myStream = saveFileDialog1.OpenFile()) != null)
-                {
                     Stream fileStream = saveFileDialog1.OpenFile();
                     StreamWriter sw = new StreamWriter(fileStream);
 
                     sw.Write(scenarioPreviewTB.Text);
                     sw.Close();
                     fileStream.Close();
-                    myStream.Close();
 
                     scenarioPreviewTB.Clear();
-                }
             }
         }
     }
